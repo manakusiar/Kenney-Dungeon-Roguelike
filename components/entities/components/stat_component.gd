@@ -1,0 +1,2 @@
+class_name stat_component
+extends Node

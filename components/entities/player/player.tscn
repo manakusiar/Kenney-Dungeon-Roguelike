@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://qfrf2deyk2gm"]
+
+[ext_resource type="Texture2D" uid="uid://b57mmilccwnlu" path="res://components/entities/player/players.png" id="1_4w2h4"]
+[ext_resource type="Script" uid="uid://srjk8rnrlb1h" path="res://components/entities/player/player.gd" id="1_yrs2i"]
+[ext_resource type="Script" uid="uid://bi8ym54h77htj" path="res://components/entities/components/movement_component/movement_component.gd" id="3_wdtix"]
+[ext_resource type="Script" uid="uid://c5ufbswm42ah4" path="res://components/entities/components/animation_component/animation_component.gd" id="4_2573b"]
+[ext_resource type="Script" uid="uid://ck07b31boyklb" path="res://components/entities/components/input_component/input_component.gd" id="5_8adti"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrs2i"]
+atlas = ExtResource("1_4w2h4")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omgnn"]
+atlas = ExtResource("1_4w2h4")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k87f5"]
+atlas = ExtResource("1_4w2h4")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdtix"]
+atlas = ExtResource("1_4w2h4")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ccnoh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrs2i")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omgnn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k87f5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdtix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k87f5")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4w2h4"]
+size = Vector2(10, 6)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animated_sprite", "movement_component", "animation_component", "input_component")]
+script = ExtResource("1_yrs2i")
+animated_sprite = NodePath("AnimatedSprite2D")
+movement_component = NodePath("Components/MovementComponent")
+animation_component = NodePath("Components/AnimationComponent")
+input_component = NodePath("Components/InputComponent")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_ccnoh")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_4w2h4")
+
+[node name="Components" type="Node" parent="."]
+
+[node name="MovementComponent" type="Node" parent="Components"]
+script = ExtResource("3_wdtix")
+metadata/_custom_type_script = "uid://bi8ym54h77htj"
+
+[node name="AnimationComponent" type="Node" parent="Components"]
+script = ExtResource("4_2573b")
+metadata/_custom_type_script = "uid://c5ufbswm42ah4"
+
+[node name="InputComponent" type="Node" parent="Components"]
+script = ExtResource("5_8adti")
+metadata/_custom_type_script = "uid://ck07b31boyklb"

@@ -1,0 +1,73 @@
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bw2wvkr32wh61"]
+
+[ext_resource type="FontFile" uid="uid://frhs7uw22ihl" path="res://assets/fonts/Kenney Mini Square.ttf" id="1_nvpyd"]
+[ext_resource type="Texture2D" uid="uid://bpkuaqjtrg4r6" path="res://globals/themes/adventure/tilemap_small.png" id="2_nvpyd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nvpyd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljxgu"]
+atlas = ExtResource("2_nvpyd")
+region = Rect2(224, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cbuha"]
+texture = SubResource("AtlasTexture_ljxgu")
+texture_margin_left = 7.0
+texture_margin_top = 7.0
+texture_margin_right = 7.0
+texture_margin_bottom = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbuha"]
+atlas = ExtResource("2_nvpyd")
+region = Rect2(240, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_icai6"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+texture = SubResource("AtlasTexture_cbuha")
+texture_margin_left = 7.0
+texture_margin_top = 7.0
+texture_margin_right = 7.0
+texture_margin_bottom = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw5u8"]
+atlas = ExtResource("2_nvpyd")
+region = Rect2(240, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_coipj"]
+content_margin_left = 12.0
+content_margin_right = 12.0
+texture = SubResource("AtlasTexture_uw5u8")
+texture_margin_left = 7.0
+texture_margin_top = 7.0
+texture_margin_right = 7.0
+texture_margin_bottom = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvpyd"]
+atlas = ExtResource("2_nvpyd")
+region = Rect2(144, 0, 16, 16)
+
+[resource]
+Button/colors/font_color = Color(1, 0.94509804, 0.8235294, 1)
+Button/colors/font_focus_color = Color(1, 0.94509804, 0.8235294, 1)
+Button/colors/font_hover_color = Color(1, 0.94509804, 0.8235294, 1)
+Button/colors/font_hover_pressed_color = Color(1, 0.94509804, 0.8235294, 1)
+Button/colors/font_pressed_color = Color(1, 0.94509804, 0.8235294, 1)
+Button/font_sizes/font_size = 8
+Button/fonts/font = ExtResource("1_nvpyd")
+Button/styles/disabled = null
+Button/styles/focus = SubResource("StyleBoxEmpty_nvpyd")
+Button/styles/hover = SubResource("StyleBoxTexture_cbuha")
+Button/styles/normal = SubResource("StyleBoxTexture_cbuha")
+Button/styles/pressed = SubResource("StyleBoxTexture_icai6")
+Label/colors/font_color = Color(0.6745098, 0.4627451, 0.23529412, 1)
+Label/font_sizes/font_size = 8
+Label/fonts/font = ExtResource("1_nvpyd")
+Label/styles/focus = SubResource("StyleBoxTexture_coipj")
+Label/styles/normal = SubResource("StyleBoxTexture_coipj")
+OptionButton/icons/arrow = SubResource("AtlasTexture_nvpyd")
+OptionButton/styles/focus = SubResource("StyleBoxTexture_cbuha")
+OptionButton/styles/hover = SubResource("StyleBoxTexture_cbuha")
+OptionButton/styles/hover_pressed = SubResource("StyleBoxTexture_cbuha")
+OptionButton/styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_cbuha")
+OptionButton/styles/normal = SubResource("StyleBoxTexture_cbuha")
+OptionButton/styles/pressed = SubResource("StyleBoxTexture_cbuha")
