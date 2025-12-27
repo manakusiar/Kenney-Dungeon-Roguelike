@@ -7,6 +7,4 @@ extends CharacterBody2D
 @export var movement_component: MovementComponent
 @export var animation_component: AnimationComponent
 @export var input_component: InputComponent
-
-func _process(delta: float) -> void:
-	movement_component.manage_movement(delta)
+@export var stat_component: StatComponent
